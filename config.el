@@ -39,7 +39,7 @@
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type t)
+(setq display-line-numbers-type 'relative)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -85,35 +85,32 @@
 (setq-default history-length 1000)
 (setq create-lockfiles nil)
 
-(setq confirm-kill-emacs nil)
+;; (setq confirm-kill-emacs nil)
 
 (setq org-agenda-skip-scheduled-if-done t)
 (setq org-agenda-skip-deadline-if-done t)
 (setq projectile-project-search-path '("~/AfterShip/" "~/github/"))
-
+(setq projectile-ignored-projects '("~/" "/tmp"))
 
 (setq +format-with-lsp nil)
 
 (setq flycheck-flake8-maximum-line-length 120)
-(setq-default flycheck-disabled-checkers '(python-pylint python-mypy pydocstyle python-pyright python-pycompile))
+(setq-default flycheck-disabled-checkers '(python-pylint python-mypy pydocstyle python-pyright python-pycompile lsp))
 
-(after! centaur-tabs
-  (setq centaur-tabs-style "wave"))
-
-(setq projectile-ignored-projects '("~/" "/tmp"))
 
 (after! company
   (setq company-idle-delay 0.1
         company-tooltip-align-annotations t
-        company-show-numbers t
+        company-show-quick-access t
         company-minimum-prefix-length 1))
-(setq +lsp-company-backends '(:separate company-yasnippet company-capf))
-(setq company-backends '(:separate company-yasnippet company-capf))
+
+(setq company-backends '(:separate company-yasnippet company-capf company-files company-gtags company-etags company-keywords))
+(setq +lsp-company-backends '(:separate company-yasnippet company-capf company-files company-gtags company-etags company-keywords))
 
 (setq lsp-enable-file-watchers nil)
 (setq lsp-file-watch-threshold nil)
 
-;; (setq yas-triggers-in-field t)
+(setq yas-triggers-in-field t)
 
 ; mapping
 (map! :leader
@@ -127,4 +124,3 @@
 (define-key evil-motion-state-map (kbd "C-l") #'evil-window-right)
 
 (set-formatter! 'black "black -l 119 -q -")
-

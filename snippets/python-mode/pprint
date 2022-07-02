@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: pprint
+# uuid: pprint
+# key: pp
+# condition: t
+# --
+__import__("pprint").pprint($0)

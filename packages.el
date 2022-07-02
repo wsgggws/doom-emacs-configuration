@@ -58,11 +58,3 @@
 ;;          (recentf-add-file buffer-file-name)))
 ;;   :init
 ;;   (add-hook 'switch-buffer-functions #'my-recentf-track-visited-file))
-
-
-
-(use-package! doom-snippets             ; hlissner
-  :after yasnippet)
-
-(use-package! yasnippet-snippets        ; AndreaCrotti
-  :after yasnippet)
