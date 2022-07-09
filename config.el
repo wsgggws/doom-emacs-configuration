@@ -95,7 +95,7 @@
 (setq +format-with-lsp nil)
 
 (setq flycheck-flake8-maximum-line-length 120)
-(setq-default flycheck-disabled-checkers '(python-pylint python-mypy pydocstyle python-pyright python-pycompile lsp))
+(setq-default flycheck-disabled-checkers '(python-pylint python-mypy pydocstyle python-pyright python-pycompile))
 
 
 (after! company
@@ -124,3 +124,8 @@
 (define-key evil-motion-state-map (kbd "C-l") #'evil-window-right)
 
 (set-formatter! 'black "black -l 119 -q -")
+
+(setq auth-sources '("~/.authinfo"))
+
+(setq frame-title-format '("%b - Doom Emacs - 码码要洗手"))
+(setq icon-title-format '("%b - Doom Emacs - 码码要洗手"))
