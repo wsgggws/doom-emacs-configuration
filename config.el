@@ -32,9 +32,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-molokai)
-;; (setq doom-theme 'doom-vibrant)
-;; (setq doom-theme 'doom-dracula)
+(setq doom-theme 'doom-nord-light)
 
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
@@ -95,7 +93,7 @@
 (setq +format-with-lsp nil)
 
 (setq flycheck-flake8-maximum-line-length 120)
-(setq-default flycheck-disabled-checkers '(python-pylint python-mypy pydocstyle python-pyright python-pycompile))
+(setq-default flycheck-disabled-checkers '(python-pylint python-mypy pydocstyle python-pycompile))
 
 
 (after! company
@@ -104,8 +102,9 @@
         company-show-quick-access t
         company-minimum-prefix-length 1))
 
-(setq company-backends '(:separate company-yasnippet company-capf company-files company-gtags company-etags company-keywords))
-(setq +lsp-company-backends '(:separate company-yasnippet company-capf company-files company-gtags company-etags company-keywords))
+(setq company-backends '(:separate company-semantic company-bbdb company-cmake company-clang company-oddmuse company-dabbrev company-files company-gtags company-etags company-keywords company-yasnippet company-capf))
+(setq +lsp-company-backends '(:separate company-semantic company-bbdb company-cmake company-clang company-oddmuse company-dabbrev company-files company-gtags company-etags company-keywords company-yasnippet company-capf))
+
 
 (setq lsp-enable-file-watchers nil)
 (setq lsp-file-watch-threshold nil)
