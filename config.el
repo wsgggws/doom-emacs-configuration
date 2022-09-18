@@ -21,7 +21,7 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-(setq doom-font (font-spec :family "Hack Nerd Font Mono" :size 16 :weight 'Regular)
+(setq doom-font (font-spec :family "Hack Nerd Font Mono" :size 15 :weight 'Regular)
      doom-variable-pitch-font (font-spec :family "Hack Nerd Font Mono" :size 15))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
@@ -83,11 +83,11 @@
 (setq-default history-length 1000)
 (setq create-lockfiles nil)
 
-;; (setq confirm-kill-emacs nil)
+(setq confirm-kill-emacs nil)
 
 (setq org-agenda-skip-scheduled-if-done t)
 (setq org-agenda-skip-deadline-if-done t)
-(setq projectile-project-search-path '("~/AfterShip/" "~/github/"))
+(setq projectile-project-search-path '("~/AfterShip" "~/github"))
 (setq projectile-ignored-projects '("~/" "/tmp"))
 
 (setq +format-with-lsp nil)
@@ -128,3 +128,7 @@
 
 (setq frame-title-format '("%b - Doom Emacs - 码码要洗手"))
 (setq icon-title-format '("%b - Doom Emacs - 码码要洗手"))
+
+(setq rustic-cargo-bin "~/.cargo/bin/cargo")
+
+(setq org-src-fontify-natively t)
