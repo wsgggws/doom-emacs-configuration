@@ -83,7 +83,7 @@
 (setq-default history-length 1000)
 (setq create-lockfiles nil)
 
-(setq confirm-kill-emacs nil)
+;; (setq confirm-kill-emacs t)
 
 (setq org-agenda-skip-scheduled-if-done t)
 (setq org-agenda-skip-deadline-if-done t)
@@ -131,4 +131,4 @@
 
 (setq rustic-cargo-bin "~/.cargo/bin/cargo")
 
-(setq org-src-fontify-natively t)
+;; (setq org-src-fontify-natively t)
